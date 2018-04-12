@@ -1,6 +1,6 @@
 #include "circular_queue.h"
 
-#include <cstring.h>
+#include <cstring>
 
 CircularQueue::CircularQueue(uint32_t size)
 	:m_buffer(NULL)
@@ -40,7 +40,7 @@ void CircularQueue::UnInit()
 }
 
 
-bool CircularQueue::Write(char* str, uint32_t len)
+bool CircularQueue::Write(const char* str, uint32_t len)
 {
 	if (NULL == str || 0 == len)
 	{
@@ -59,11 +59,13 @@ bool CircularQueue::Write(char* str, uint32_t len)
 	else
 	{
 		uint32_t seg1 = m_size - m_tail;
-		uint32_t seg2 = len - seg2;
+		uint32_t seg2 = len - seg1;
 		memcpy(TailPtr(), str, seg1);
 		memcpy(m_buffer, str + seg1, seg2);
-		m_tail = m_buffer + seg2;
+		m_tail = seg2;
 	}
+
+	return true;
 }
 
 bool CircularQueue::Read(char* str, uint32_t len)
@@ -87,8 +89,9 @@ bool CircularQueue::Read(char* str, uint32_t len)
 		uint32_t seg2 = len - seg1;
 		memcpy(str, HeadPtr(), seg1);
 		memcpy(str + seg1, m_buffer, seg2);
-		m_head = m_buffer + seg2;
+		m_head = seg2;
 	}
+	return true;
 }
 
 uint32_t CircularQueue::Used()

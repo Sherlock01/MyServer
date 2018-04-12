@@ -18,9 +18,18 @@
     <ClCompile Include="common\circular_queue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="common\ptr_circular_queue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\circular_queue_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\circular_queue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ptr_circular_queue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
