@@ -16,13 +16,6 @@ public:
 	bool Read(char* str, uint32_t len);
 
 protected:
-	uint32_t Used();
-	uint32_t Left();
-
-	inline char* HeadPtr() { return m_buffer + m_head; }
-	inline char* TailPtr() { return m_buffer + m_tail; }
-
-protected:
 	char* m_buffer;
 	uint32_t m_size;
 	uint32_t volatile m_head;

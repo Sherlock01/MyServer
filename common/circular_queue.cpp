@@ -46,21 +46,24 @@ bool CircularQueue::Write(const char* str, uint32_t len)
 	{
 		return false;
 	}
-	if (Left() < len)
+    uint32_t tmphead = m_head;
+    uint32_t used = (m_tail >= tmphead)?(m_tail - tmphead):(m_tail + m_size - tmphead);
+    uint32_t left = m_size - used - 1;
+	if (left < len)
 	{
 		return false;
 	}
 
 	if (m_tail + len < m_size)		
 	{
-		memcpy(TailPtr(), str, len);
+		memcpy(m_buffer + m_tail, str, len);
 		m_tail += len;
 	}
 	else
 	{
 		uint32_t seg1 = m_size - m_tail;
 		uint32_t seg2 = len - seg1;
-		memcpy(TailPtr(), str, seg1);
+		memcpy(m_buffer + m_tail, str, seg1);
 		memcpy(m_buffer, str + seg1, seg2);
 		m_tail = seg2;
 	}
@@ -74,40 +77,25 @@ bool CircularQueue::Read(char* str, uint32_t len)
 	{
 		return false;
 	}
-	if (Used() < len)
+    uint32_t tmptail = m_tail;
+    uint32_t used = (tmptail >= m_head)?(tmptail - m_head):(tmptail + m_size - m_head);
+	if (used < len)
 	{
 		return false;
 	}
-	if (m_tail >= m_head)
+	if (m_head + len < m_size)
 	{
-		memcpy(str, HeadPtr(), len);
+		memcpy(str, m_buffer + m_head, len);
 		m_head += len;
 	}
 	else
 	{
-		uint32_t seg1 = len - m_tail;
+		uint32_t seg1 = m_size - m_head;
 		uint32_t seg2 = len - seg1;
-		memcpy(str, HeadPtr(), seg1);
+		memcpy(str, m_buffer + m_head, seg1);
 		memcpy(str + seg1, m_buffer, seg2);
 		m_head = seg2;
 	}
 	return true;
-}
-
-uint32_t CircularQueue::Used()
-{
-	if (m_tail >= m_head)
-	{
-		return m_tail - m_head;
-	}
-	else
-	{
-		return m_tail + m_size - m_head;
-	}
-}
-
-uint32_t CircularQueue::Left()
-{
-	return m_size - Used() - 1;
 }
 
