@@ -69,11 +69,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="common\circular_queue.cpp" />
+    <ClCompile Include="common\mem_pool.cpp" />
+    <ClCompile Include="common\mem_buffer.cpp" />
     <ClCompile Include="common\ptr_circular_queue.cpp" />
     <ClCompile Include="test\circular_queue_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\circular_queue.h" />
+    <ClInclude Include="common\mem_pool.h" />
+    <ClInclude Include="common\mem_buffer.h" />
     <ClInclude Include="common\ptr_circular_queue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
