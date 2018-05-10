@@ -1,0 +1,9 @@
+INCLUDE_DIRECTORIES( . )
+
+FILE(GLOB_RECURSE SRC_LIST *.cpp)
+
+AUX_SOURCE_DIRECTORY(${SERVER_SOURCE_DIR}/common SRC_LIST)
+
+ADD_EXECUTABLE(ptr_circular_queue_test ${SRC_LIST})
+
+TARGET_LINK_LIBRARIES(ptr_circular_queue_test pthread) 

@@ -20,4 +20,5 @@ INCLUDE_DIRECTORIES(${SERVER_SOURCE_DIR}/common )
 
 #LINK_DIRECTORIES(...lib)
 
-ADD_SUBDIRECTORY(circular_queue_test)
+#ADD_SUBDIRECTORY(circular_queue_test)
+#ADD_SUBDIRECTORY(ptr_circular_queue_test)
