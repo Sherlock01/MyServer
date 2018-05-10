@@ -1,5 +1,7 @@
 #include "mem_pool.h"
 
+#include <cstdio>
+
 uint32_t CloserTo2Pow(uint32_t k)
 {
 	//未做越界检测
@@ -134,7 +136,17 @@ MemBuffer* MemPool::Borrow(uint32_t size)
 		printf("borrow buffer capacity too large capacity = %d\n", capacity);
 		return NULL;
 	}
-	return m_pool[capacity].Borrow();
+	auto it = m_pool.find(capacity);
+	if (it == m_pool.end())
+	{
+		MemList* list = new MemList(capacity);
+		if (NULL == list)
+		{
+			return NULL;
+		}
+		m_pool[capacity] = list;
+	}
+	return m_pool[capacity]->Borrow();
 }
 
 void MemPool::GiveBack(MemBuffer* buffer)
@@ -144,18 +156,33 @@ void MemPool::GiveBack(MemBuffer* buffer)
 		printf("give back buffer = null\n");
 		return;
 	}
-	m_pool[buffer->Capacity()].GiveBack(buffer);
+	uint32_t capacity = buffer->Capacity();
+	auto it = m_pool.find(capacity);
+	if (it == m_pool.end())//理论上不会出现
+	{
+		printf("give back find memlist failed\n");
+		MemList* list = new MemList(capacity);
+		if (NULL == list)
+		{
+			return ;
+		}
+		m_pool[capacity] = list;
+	}
+
+	m_pool[capacity]->GiveBack(buffer);
 }
 
 void MemPool::CheckFree(time_t now)
 {
 	for (auto it = m_pool.begin(); it != m_pool.end(); )
 	{
-		MemList& list = it->second;
-		list.CheckFree(now);
-		if (0 == list.Size())
+		MemList* list = it->second;
+		list->CheckFree(now);
+		if (0 == list->Size() && list->AllCount() <= 0)
 		{
 			m_pool.erase(it++);
+			delete list;
+			list = NULL;
 		}
 		else
 		{

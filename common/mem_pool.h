@@ -23,6 +23,7 @@ public:
 	~MemList();
 
 	inline uint32_t Size() { return m_mems.size(); }
+	inline uint32_t AllCount() { return m_allCount; }
 
 	MemBuffer* Borrow();
 	void GiveBack(MemBuffer* buffer);
@@ -58,7 +59,7 @@ private:
 
 private:
 	// <capacity, memlist>
-	std::unordered_map<uint32_t, MemList> m_pool;	
+	std::unordered_map<uint32_t, MemList*> m_pool;	
 };
 
 #endif
