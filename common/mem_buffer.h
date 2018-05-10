@@ -2,6 +2,7 @@
 #define  __MEM_BUFFER_H__
 
 #include <stdint.h>
+#include <stddef.h>
 
 class MemBuffer
 {
@@ -9,7 +10,7 @@ public:
 	MemBuffer(uint32_t capacity);
 	~MemBuffer();
 
-	inline bool CanUse() { NULL != m_buffer; }
+	inline bool CanUse() { return NULL != m_buffer; }
 	inline uint32_t Size() { return m_tail - m_head; }
 	inline uint32_t Capacity() { return m_capacity; }
 

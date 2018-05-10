@@ -1,6 +1,5 @@
 #include "mem_buffer.h"
 
-#include <stddef.h>
 #include <cstring>
 
 MemBuffer::MemBuffer(uint32_t capacity)
