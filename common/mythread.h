@@ -1,7 +1,7 @@
 #ifndef __MYTHREAD_H__
 #define __MYTHREAD_H__
 
-#include <stdint.h>
+#include <cstdint>
 #include <pthread.h>
 
 class Thread

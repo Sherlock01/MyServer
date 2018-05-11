@@ -1,6 +1,6 @@
 #include "ptr_circular_queue.h"
 
-#include <stddef.h>
+#include <cstddef>
 
 PtrCircularQueue::PtrCircularQueue(uint32_t size)
     :m_buffer(NULL)

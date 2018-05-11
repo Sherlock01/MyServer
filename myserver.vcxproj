@@ -45,6 +45,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>common</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
@@ -71,14 +72,24 @@
     <ClCompile Include="common\circular_queue.cpp" />
     <ClCompile Include="common\mem_pool.cpp" />
     <ClCompile Include="common\mem_buffer.cpp" />
+    <ClCompile Include="common\myrandom.cpp" />
+    <ClCompile Include="common\mythread.cpp" />
     <ClCompile Include="common\ptr_circular_queue.cpp" />
     <ClCompile Include="test\circular_queue_test.cpp" />
+    <ClCompile Include="test\circular_queue_test\circular_queue_test.cpp" />
+    <ClCompile Include="test\mem_pool_test\mem_pool_test.cpp" />
+    <ClCompile Include="test\ptr_circular_queue_test\ptr_circular_queue_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\circular_queue.h" />
     <ClInclude Include="common\mem_pool.h" />
     <ClInclude Include="common\mem_buffer.h" />
+    <ClInclude Include="common\myrandom.h" />
+    <ClInclude Include="common\mythread.h" />
     <ClInclude Include="common\ptr_circular_queue.h" />
+    <ClInclude Include="test\circular_queue_test\circular_queue_test.h" />
+    <ClInclude Include="test\mem_pool_test\mem_pool_test.h" />
+    <ClInclude Include="test\ptr_circular_queue_test\ptr_circular_queue_test.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

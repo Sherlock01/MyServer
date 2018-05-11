@@ -3,7 +3,7 @@
 
 #include <cstdlib>
 #include <ctime>
-#include <stdint.h>
+#include <cstdint>
 
 class HRandom
 {

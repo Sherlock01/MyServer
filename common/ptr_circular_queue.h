@@ -1,7 +1,7 @@
 #ifndef __PTR_CIRCULAR_QUEUE_H__
 #define __PTR_CIRCULAR_QUEUE_H__
 
-#include <stdint.h>
+#include <cstdint>
 
 class PtrCircularQueue
 {

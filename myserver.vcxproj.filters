@@ -30,6 +30,21 @@
     <ClCompile Include="common\mem_pool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="test\mem_pool_test\mem_pool_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\myrandom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\mythread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\circular_queue_test\circular_queue_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\ptr_circular_queue_test\ptr_circular_queue_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\circular_queue.h">
@@ -42,6 +57,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="common\mem_pool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test\mem_pool_test\mem_pool_test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\myrandom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\mythread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test\circular_queue_test\circular_queue_test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test\ptr_circular_queue_test\ptr_circular_queue_test.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

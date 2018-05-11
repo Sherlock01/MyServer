@@ -62,12 +62,21 @@ bool MemBuffer::ReadOnly(char* str, uint32_t len)
 	return true;
 }
 
+bool MemBuffer::Remove(uint32_t len)
+{
+	if (m_head + len > m_tail)
+	{
+		return false;
+	}
+	m_head += len;
+	return true;
+}
+
 bool MemBuffer::ReadAndRemove(char* str, uint32_t len)
 {
 	if (ReadOnly(str, len))	
 	{
-		m_head += len;
-		return true;
+		return Remove(len);
 	}
 	return false;
 }

@@ -2,7 +2,7 @@
 #include "myrandom.h"
 
 #include <iostream>
-#include <unistd.h>
+#include <cunistd>
 /*
 CircularQueue cirque(100);
 
