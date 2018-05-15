@@ -1,0 +1,2 @@
+#include "logbase.h"
+

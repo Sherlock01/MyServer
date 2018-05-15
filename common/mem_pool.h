@@ -10,9 +10,11 @@
 
 #define CAPACITY_INTERVAL_2_EXP 1
 #define CAPACITY_INTERVAL_MULTIPLE 2 // (pow(2, CAPACITY_INTERVAL_2_EXP)
-#define CAPACITY_MAX 4096 //要跟协议大小相关联
+//#define CAPACITY_MAX 4096 //要跟协议大小相关联
+#define CAPACITY_MAX 20 //要跟协议大小相关联
 
-#define BUFFER_USELESS_FREE_TIME 60 //(second)
+//#define BUFFER_USELESS_FREE_TIME 60 //(second)
+#define BUFFER_USELESS_FREE_TIME 2 //(second)
 
 uint32_t CloserTo2Pow(uint32_t k);
 
@@ -29,6 +31,8 @@ public:
 	void GiveBack(MemBuffer* buffer);
 
 	void CheckFree(time_t now);
+
+	std::vector<MemBuffer*>& Members() { return m_mems; }
 
 private:
 	void DelOne();
@@ -53,12 +57,14 @@ public:
 	MemBuffer* Borrow(uint32_t size);
 	void GiveBack(MemBuffer* buffer);
 
+	std::unordered_map<uint32_t, MemList*>& PoolMap() { return m_pool; }
+
 private:
 	void CheckFree(time_t now);
 	uint32_t GetSuitbleSize(uint32_t size);
 
 private:
-	// <capacity, memlist>
+	// <capacity, MemList*>
 	std::unordered_map<uint32_t, MemList*> m_pool;	
 };
 

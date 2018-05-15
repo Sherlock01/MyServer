@@ -45,6 +45,21 @@
     <ClCompile Include="test\ptr_circular_queue_test\ptr_circular_queue_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="common\log\logbase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\log\logconsole.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\log\logfile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\log\logmgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\log_test\log_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\circular_queue.h">
@@ -72,6 +87,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="test\ptr_circular_queue_test\ptr_circular_queue_test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\log\logbase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\log\logconsole.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\log\logfile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\log\logmgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\singleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\log\logmacro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test\log_test\log_test.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

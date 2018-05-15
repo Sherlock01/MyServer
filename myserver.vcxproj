@@ -70,6 +70,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="common\circular_queue.cpp" />
+    <ClCompile Include="common\log\logbase.cpp" />
+    <ClCompile Include="common\log\logconsole.cpp" />
+    <ClCompile Include="common\log\logfile.cpp" />
+    <ClCompile Include="common\log\logmgr.cpp" />
     <ClCompile Include="common\mem_pool.cpp" />
     <ClCompile Include="common\mem_buffer.cpp" />
     <ClCompile Include="common\myrandom.cpp" />
@@ -77,17 +81,25 @@
     <ClCompile Include="common\ptr_circular_queue.cpp" />
     <ClCompile Include="test\circular_queue_test.cpp" />
     <ClCompile Include="test\circular_queue_test\circular_queue_test.cpp" />
+    <ClCompile Include="test\log_test\log_test.cpp" />
     <ClCompile Include="test\mem_pool_test\mem_pool_test.cpp" />
     <ClCompile Include="test\ptr_circular_queue_test\ptr_circular_queue_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\circular_queue.h" />
+    <ClInclude Include="common\log\logbase.h" />
+    <ClInclude Include="common\log\logconsole.h" />
+    <ClInclude Include="common\log\logfile.h" />
+    <ClInclude Include="common\log\logmacro.h" />
+    <ClInclude Include="common\log\logmgr.h" />
     <ClInclude Include="common\mem_pool.h" />
     <ClInclude Include="common\mem_buffer.h" />
     <ClInclude Include="common\myrandom.h" />
     <ClInclude Include="common\mythread.h" />
     <ClInclude Include="common\ptr_circular_queue.h" />
+    <ClInclude Include="common\singleton.h" />
     <ClInclude Include="test\circular_queue_test\circular_queue_test.h" />
+    <ClInclude Include="test\log_test\log_test.h" />
     <ClInclude Include="test\mem_pool_test\mem_pool_test.h" />
     <ClInclude Include="test\ptr_circular_queue_test\ptr_circular_queue_test.h" />
   </ItemGroup>

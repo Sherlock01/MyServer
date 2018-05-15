@@ -22,4 +22,5 @@ INCLUDE_DIRECTORIES(${SERVER_SOURCE_DIR}/common )
 
 #ADD_SUBDIRECTORY(test/circular_queue_test)
 #ADD_SUBDIRECTORY(test/ptr_circular_queue_test)
-ADD_SUBDIRECTORY(test/mem_pool_test)
+#ADD_SUBDIRECTORY(test/mem_pool_test)
+ADD_SUBDIRECTORY(test/log_test)

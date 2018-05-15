@@ -2,7 +2,7 @@
 #include "myrandom.h"
 
 #include <iostream>
-#include <cunistd>
+#include <unistd.h>
 
 ThreadRead::ThreadRead()
 {
