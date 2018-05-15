@@ -48,7 +48,7 @@ bool LogMgr::Init()
 	m_logLevel = LOGTYPE_DEBUG;
 
 	m_logList[LOGPRINT_CONSOLE] = new LogConsole();
-	m_logList[LOGPRINT_FILE] = new LogFile(LFIT_MIN, "server");
+	m_logList[LOGPRINT_FILE] = new LogFile(LFIT_DAY, "server");
 
 	return true;
 }

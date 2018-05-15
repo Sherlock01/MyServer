@@ -88,11 +88,11 @@ void LogFile::CheckFile()
 
 bool LogFile::TimeDiff(struct tm& oldt, struct tm& newt)
 {
-	if (oldt.tm_year != newt.tm_year) return false;	
-	if (oldt.tm_mon != newt.tm_mon) return false;
-	if (oldt.tm_mday != newt.tm_mday) return false;
-	if ((LFIT_HOUR == m_type || LFIT_MIN == m_type) && (oldt.tm_hour != newt.tm_hour)) return false;
-	if (LFIT_MIN == m_type && oldt.tm_min != newt.tm_min) return false;
+	if (oldt.tm_year != newt.tm_year) return true;	
+	if (oldt.tm_mon != newt.tm_mon) return true;
+	if (oldt.tm_mday != newt.tm_mday) return true;
+	if ((LFIT_HOUR == m_type || LFIT_MIN == m_type) && (oldt.tm_hour != newt.tm_hour)) return true;
+	if (LFIT_MIN == m_type && oldt.tm_min != newt.tm_min) return true;
 
-	return true;
+	return false;
 }
