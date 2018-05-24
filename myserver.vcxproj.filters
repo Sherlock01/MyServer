@@ -60,6 +60,9 @@
     <ClCompile Include="test\log_test\log_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="common\network\ptr_pipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\circular_queue.h">
@@ -108,6 +111,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="test\log_test\log_test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\network\ptr_pipe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

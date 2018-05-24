@@ -22,6 +22,8 @@ public:
 
 	void Reset();
 
+	inline char* BufferHead() { return m_buffer; }
+
 private:
 	bool Init(uint32_t capacity);
 	void UnInit();

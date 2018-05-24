@@ -78,6 +78,7 @@
     <ClCompile Include="common\mem_buffer.cpp" />
     <ClCompile Include="common\myrandom.cpp" />
     <ClCompile Include="common\mythread.cpp" />
+    <ClCompile Include="common\network\ptr_pipe.cpp" />
     <ClCompile Include="common\ptr_circular_queue.cpp" />
     <ClCompile Include="test\circular_queue_test.cpp" />
     <ClCompile Include="test\circular_queue_test\circular_queue_test.cpp" />
@@ -96,6 +97,7 @@
     <ClInclude Include="common\mem_buffer.h" />
     <ClInclude Include="common\myrandom.h" />
     <ClInclude Include="common\mythread.h" />
+    <ClInclude Include="common\network\ptr_pipe.h" />
     <ClInclude Include="common\ptr_circular_queue.h" />
     <ClInclude Include="common\singleton.h" />
     <ClInclude Include="test\circular_queue_test\circular_queue_test.h" />
