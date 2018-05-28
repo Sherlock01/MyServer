@@ -18,17 +18,17 @@ int PtrOnewayPipe::Write(void* ptr)
 	{
 		if (m_ptrTmp.size() >= m_tmpMaxSize)
 		{
-			return -1;
+			return HNET::FUNC_F_ONEWAY_PTRTMPFULL;
 		}
 		m_ptrTmp.push_back(ptr);
-		return 1;
+		return HNET::FUNC_S_ONEWAY_INTO_PTRTMP;
 	}
 	if (!m_ptrQueue.Write(ptr))
 	{
 		m_ptrTmp.push_back(ptr);
-		return 2;
+		return HNET::FUNC_S_ONEWAY_INTO_PTRTMP;
 	}
-	return 0;
+	return HNET::FUNC_SUCCESS;
 }
 
 void PtrOnewayPipe::Update()

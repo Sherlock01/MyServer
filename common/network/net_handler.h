@@ -19,7 +19,7 @@ public:
 	int ReqSendData(char* data, uint16_t len);
 
 private:
-	PtrPipeMgr* PipeMgr();
+	inline PtrPipeMgr* PipeMgr() { return PtrPipeMgr::Instance(); }
 
 private:
 	MemPool m_memPool;	

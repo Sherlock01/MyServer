@@ -48,5 +48,17 @@ struct HNetReqInfo
 	}info;
 };
 
+namespace HNET//HNetFuncRet
+{
+	//成功为非负数 失败为负数
+	enum
+	{
+		FUNC_F_ONEWAY_PTRTMPFULL = -2,
+		FUNC_FAILED = -1,
+		FUNC_SUCCESS = 0,
+		FUNC_S_ONEWAY_INTO_PTRTMP = 1,
+	};
+}
+
 #endif
 

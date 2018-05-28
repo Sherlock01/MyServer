@@ -56,7 +56,7 @@ int NetHandler::ReqDisConnect(ConnID connID)
 	auto ptr = m_memPool.Borrow(sizeof(HNetReqInfo));
 	if (NULL == ptr)
 	{
-		return -11;
+		return HNET::FUNC_FAILED;
 	}
 	HNetReqInfo* req = (HNetReqInfo*)(ptr->BufferHead());
 	req->type = HNRT_DISCONNECT;
@@ -69,17 +69,12 @@ int NetHandler::ReqSendData(char* data, uint16_t len)
 	auto ptr = m_memPool.Borrow(sizeof(HNetReqInfo) + len);
 	if (NULL == ptr)
 	{
-		return -11;
+		return HNET::FUNC_FAILED;
 	}
 	HNetReqInfo* req = (HNetReqInfo*)(ptr->BufferHead());
 	req->type = HNRT_SENDDATA;
 	req->info->senddata.len = len;
 	memcpy(req->info->senddata.data, data, len);
 	return PipeMgr()->Logic2Net()->WriteSend(ptr);
-}
-
-PtrPipeMgr* NetHandler::PipeMgr()
-{
-	return PtrPipeMgr::Instance();
 }
 
