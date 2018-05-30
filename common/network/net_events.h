@@ -1,13 +1,16 @@
 #ifndef __NET_EVENT_H__
 #define __NET_EVENT_H__
 
-class PtrPipeMgr;
+class NetThread;
 
 class NetEvents
 {
 public:
 	NetEvents();
 	~NetEvents();
+
+	bool Init(NetThread* netThread);
+	void UnInit();
 
 	void Update();
 
@@ -17,7 +20,11 @@ public:
 	int ProSendData(HNetReqInfo& info);
 
 private:
-	inline PtrPipeMgr* PipeMgr() { return PtrPipeMgr::Instance(); };
+	inline NetThread* GetNetThread() { return m_netThread; }
+
+private:
+	NetThread* m_netThread;
+}
 
 #endif
 

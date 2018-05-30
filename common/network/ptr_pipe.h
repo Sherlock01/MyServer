@@ -45,7 +45,7 @@ private:
 	PtrOnewayPipe m_backPipe;
 };
 
-class PtrPipeMgr : public Singleton<PtrPipeMgr>
+class PtrPipeMgr
 {
 public:
 	PtrPipeMgr();

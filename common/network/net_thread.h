@@ -6,6 +6,7 @@
 #include "ptr_pipe.h"
 #include "epollmgr.h"
 #include "net_events.h"
+#include "socketmgr.h"
 
 class NetThread : public Thread
 {
@@ -20,12 +21,16 @@ public:
 
     virtual void Run();
 
+	inline PtrPipeMgr& GetPipeMgr() { return m_pipeMgr; }
+	inline SocketMgr& GetSocketMgr() { return m_socketMgr; }
+	inline EpollMgr& GetEpollMgr() { return m_epollMgr; }
 private:
-	inline PtrPipeMgr* PipeMgr() { return PtrPipeMgr::Instance(); }
 	
 private:
 	EpollMgr m_epollMgr;
 	NetEvents m_netEvents;		
+	SocketMgr m_socketMgr;
+	PtrPipeMgr m_pipeMgr;
 };
 
 #endif

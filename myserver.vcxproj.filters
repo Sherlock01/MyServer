@@ -84,6 +84,27 @@
     <ClCompile Include="common\network\net_thread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="common\network\net_socket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\net_test\net_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\server\baselink.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\server\config.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\server\linkmgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\server\connect_link.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\server\listen_link.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\circular_queue.h">
@@ -159,6 +180,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="common\network\net_thread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\network\net_socket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test\net_test\net_test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\server\linkmgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\server\baselink.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\server\config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\server\connect_link.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\server\listen_link.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
